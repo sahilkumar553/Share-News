@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  backend:
+    image: sahil553/backend-app:latest
+    container_name: backend
+    ports:
+      - "5000:5000"
+
+  frontend:
+    image: sahil553/frontend-app:latest
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
